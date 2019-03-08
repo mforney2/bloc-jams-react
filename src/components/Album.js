@@ -1,6 +1,6 @@
 import React from 'react';
 
-const album = () => (
+const Album = () => (
   <section>
     An ablum will go here
   </section>
