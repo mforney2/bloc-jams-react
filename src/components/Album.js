@@ -11,8 +11,14 @@ class Album extends Component {
     });
 
     this.state = {
-      album: album
+      album: album,
+      currentSong: album.songs[0],
+      isPlaying: false
     };
+
+    this.audioElement = document.createElement('audio');
+    this.audioElement.scr = album.songs[0].audioSrc;
+
   }
 
   render () {
@@ -37,6 +43,7 @@ class Album extends Component {
             this.state.album.songs.map((song, parseInt) =>
             <Link to={`/album/${song.slug}`} key={parseInt}>
               <tr key={song.number}>{parseInt +1}</tr>
+              <tr key={song.name}>{song.title}</tr>
               <tr key={song.length}>{song.duration}</tr>
             </Link>
             )
